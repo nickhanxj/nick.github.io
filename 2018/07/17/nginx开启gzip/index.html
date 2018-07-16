@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Hexo</title>
+  <title>nginx开启gzip | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="1. ngx_http_gzip_modulengx_http_gzip_module是nginx中堆响应以gzip方式进行压缩的一个拦截器，以减少传输数据的大小。 配置示例： 1234567gzip on;gzip_min_length  5k;gzip_buffers     4 16k;gzip_http_version 1.0;gzip_comp_level 3;gzip_types">
+<meta name="keywords" content="nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx开启gzip">
+<meta property="og:url" content="http://yoursite.com/2018/07/17/nginx开启gzip/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. ngx_http_gzip_modulengx_http_gzip_module是nginx中堆响应以gzip方式进行压缩的一个拦截器，以减少传输数据的大小。 配置示例： 1234567gzip on;gzip_min_length  5k;gzip_buffers     4 16k;gzip_http_version 1.0;gzip_comp_level 3;gzip_types">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://img.njlife.top/gzip_comp_level_difference.png">
+<meta property="og:updated_time" content="2018-07-16T16:37:33.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="nginx开启gzip">
+<meta name="twitter:description" content="1. ngx_http_gzip_modulengx_http_gzip_module是nginx中堆响应以gzip方式进行压缩的一个拦截器，以减少传输数据的大小。 配置示例： 1234567gzip on;gzip_min_length  5k;gzip_buffers     4 16k;gzip_http_version 1.0;gzip_comp_level 3;gzip_types">
+<meta name="twitter:image" content="https://img.njlife.top/gzip_comp_level_difference.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,36 +157,92 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-nginx开启gzip" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/17/nginx开启gzip/" class="archive-article-date">
-  	<time datetime="2018-07-16T16:37:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/17/nginx开启gzip/">nginx开启gzip</a>
+    <h1 class="article-title" itemprop="name">
+      nginx开启gzip
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/17/nginx开启gzip/" class="archive-article-date">
+  	<time datetime="2018-07-16T16:37:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-ngx-http-gzip-module"><a href="#1-ngx-http-gzip-module" class="headerlink" title="1. ngx_http_gzip_module"></a>1. ngx_http_gzip_module</h4><p><em>ngx_http_gzip_module</em>是nginx中堆响应以gzip方式进行压缩的一个拦截器，以减少传输数据的大小。</p>
+<p>配置示例：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">gzip</span> <span class="literal">on</span>;</span><br><span class="line"><span class="attribute">gzip_min_length</span>  <span class="number">5k</span>;</span><br><span class="line"><span class="attribute">gzip_buffers</span>     <span class="number">4</span> <span class="number">16k</span>;</span><br><span class="line"><span class="attribute">gzip_http_version</span> <span class="number">1</span>.<span class="number">0</span>;</span><br><span class="line"><span class="attribute">gzip_comp_level</span> <span class="number">3</span>;</span><br><span class="line"><span class="attribute">gzip_types</span>       text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png;</span><br><span class="line"><span class="attribute">gzip_vary</span> <span class="literal">on</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="2-配置项说明"><a href="#2-配置项说明" class="headerlink" title="2. 配置项说明"></a>2. 配置项说明</h4><h5 id="gzip-on-off"><a href="#gzip-on-off" class="headerlink" title="gzip on/off"></a>gzip on/off</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	gzip on | off;</span><br><span class="line">Default:	gzip off;</span><br><span class="line">Context:	http, server, location, if in location</span><br></pre></td></tr></table></figure>
+<p>开启/关闭gzip</p>
+<h5 id="gzip-buffers"><a href="#gzip-buffers" class="headerlink" title="gzip_buffers"></a>gzip_buffers</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	gzip_buffers number size;</span><br><span class="line">Default:	gzip_buffers 32 4k|16 8k;</span><br><span class="line">Context:	http, server, location</span><br></pre></td></tr></table></figure>
+<p>设置系统获取几个单位的缓存用于存储gzip的压缩结果数据流。 例如 4 4k 代表以4k为单位，按照原始数据大小以4k为单位的4倍申请内存。 4 8k 代表以8k为单位，按照原始数据大小以8k为单位的4倍申请内存。如果没有设置，默认值是申请跟原始数据相同大小的内存空间去存储gzip压缩结果。</p>
+<h5 id="gzip-comp-level"><a href="#gzip-comp-level" class="headerlink" title="gzip_comp_level"></a>gzip_comp_level</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	gzip_comp_level level;</span><br><span class="line">Default:	gzip_comp_level 1;</span><br><span class="line">Context:	http, server, location</span><br></pre></td></tr></table></figure>
+<p>设置压缩级别，可接受的值有1-9。数字越大压缩比越高，同时对CPU的消耗也越大。一般建议设置成4-5。下面是一张压缩比的图可做参考（图片来源：<a href="https://seo.g2soft.net/2015/11/19/nginx-gzip-comp-level.html）：" target="_blank" rel="noopener">https://seo.g2soft.net/2015/11/19/nginx-gzip-comp-level.html）：</a></p>
+<p><img src="https://img.njlife.top/gzip_comp_level_difference.png" alt="gzip_comp_level_difference.png"></p>
+<h5 id="gzip-disable"><a href="#gzip-disable" class="headerlink" title="gzip_disable"></a>gzip_disable</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	gzip_disable regex ...;</span><br><span class="line">Default:	—</span><br><span class="line">Context:	http, server, location</span><br><span class="line">This directive appeared in version 0.6.23.</span><br></pre></td></tr></table></figure>
+<p>匹配User-Agent头部信息决定哪些内容不需要压缩。</p>
+<h5 id="gzip-http-version"><a href="#gzip-http-version" class="headerlink" title="gzip_http_version"></a>gzip_http_version</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	gzip_http_version 1.0 | 1.1;</span><br><span class="line">Default:	gzip_http_version 1.1;</span><br><span class="line">Context:	http, server, location</span><br></pre></td></tr></table></figure>
+<p>设置最低的需要压缩的HTTP协议版本。由于早期的浏览器不支持gzip压缩，压缩之后会乱码。</p>
+<h5 id="gzip-min-length"><a href="#gzip-min-length" class="headerlink" title="gzip_min_length"></a>gzip_min_length</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	gzip_min_length length;</span><br><span class="line">Default:	gzip_min_length 20;</span><br><span class="line">Context:	http, server, location</span><br></pre></td></tr></table></figure>
+<p>设置最小的需要压缩的内容长度，小于该值的内容不会进行压缩。1k表示小于1k的内容不进行压缩。</p>
+<h5 id="gzip-proxied"><a href="#gzip-proxied" class="headerlink" title="gzip_proxied"></a>gzip_proxied</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	gzip_proxied off | expired | no-cache | no-store | private | no_last_modified | no_etag | auth | any ...;</span><br><span class="line">Default:	gzip_proxied off;</span><br><span class="line">Context:	http, server, location</span><br></pre></td></tr></table></figure>
+<p>Nginx作为反向代理的时候启用，根据某些请求和应答来决定是否在对代理请求的应答启用gzip压缩，是否压缩取决于请求头中的“Via”字段，指令中可以同时指定多个不同的参数，意义如下：</p>
+<blockquote>
+<ul>
+<li>expired - 启用压缩，如果header头中包含 “Expires” 头信息</li>
+<li>no-cache - 启用压缩，如果header头中包含 “Cache-Control:no-cache” 头信息</li>
+<li>no-store - 启用压缩，如果header头中包含 “Cache-Control:no-store” 头信息</li>
+<li>private - 启用压缩，如果header头中包含 “Cache-Control:private” 头信息</li>
+<li>no_last_modified - 启用压缩,如果header头中不包含 “Last-Modified” 头信息</li>
+<li>no_etag - 启用压缩 ,如果header头中不包含 “ETag” 头信息</li>
+<li>auth - 启用压缩 , 如果header头中包含 “Authorization” 头信息</li>
+<li>any - 无条件启用压缩</li>
+</ul>
+</blockquote>
+<h5 id="gzip-types"><a href="#gzip-types" class="headerlink" title="gzip_types"></a>gzip_types</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	gzip_types mime-type ...;</span><br><span class="line">Default:	gzip_types text/html;</span><br><span class="line">Context:	http, server, location</span><br></pre></td></tr></table></figure>
+<p>指定压缩的MIME类型。</p>
+<h5 id="gzip-vary"><a href="#gzip-vary" class="headerlink" title="gzip_vary"></a>gzip_vary</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Syntax:	gzip_vary on | off;</span><br><span class="line">Default:	</span><br><span class="line">gzip_vary off;</span><br><span class="line">Context:	http, server, locatio</span><br></pre></td></tr></table></figure>
+<p>和http头有关系，加个vary头，给代理服务器用的，有的浏览器支持压缩，有的不支持，所以避免浪费不支持的也压缩，所以根据客户端的HTTP头来判断，是否需要压缩。</p>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><ul>
+<li><a href="http://nginx.org/en/docs/http/ngx_http_gzip_module.html" target="_blank" rel="noopener">http://nginx.org/en/docs/http/ngx_http_gzip_module.html</a></li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,19 +254,96 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/17/nginx开启gzip/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -226,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
